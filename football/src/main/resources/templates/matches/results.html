@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title222</title>
+</head>
+<body>
+<h1>Seba App</h1>
+
+<!--<form th:action="@{matches}" method="get">-->
+<!--    <input type="number" name="numberMatches" placeholder="How many results do you want to display?"/>-->
+<!--    <input type="submit"/>-->
+<!--</form>-->
+
+<ul>
+    <li th:each="option : ${json.matchesIDList}">
+        <label th:for="${json.matchesIDList}" th:text="${option}">Language</label>
+    </li>
+<!--    <li th:text="${jsonReader.matchesIDList[0]}"></li>-->
+</ul>
+
+</body>
+</html>
