@@ -7,9 +7,8 @@ import sport.springframework.football.model.JsonReader;
 
 @Controller
 public class ResultController {
-
     @RequestMapping("/matches")
-    public String getAuthors(Model model){
+    public String getAllMatches(Model model){
         JsonReader reader = new JsonReader();
         model.addAttribute("json", reader);
         return "matches/results";
