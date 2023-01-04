@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sportradar</title>
+</head>
+<body>
+<h1>List of all teams sorted alphabetically</h1>
+<form th:action="@{matches}" method="get">
+    <input type="submit" value = "Back to matches results"/>
+</form>
+<br />
+<ol>
+    <li th:each="option : ${teamList}">
+        <label th:for="${teamList}" th:text="${option}"></label>
+    </li>
+</ol>
+
+</body>
+</html>

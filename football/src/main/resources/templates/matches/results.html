@@ -7,6 +7,10 @@
 </head>
 <body>
 <h1>Most probable matches results</h1>
+<form th:action="@{listOfAllTeams}" method="get">
+    <input type="submit" value = "See a list of all teams"/>
+</form>
+<br />
 <form th:action="@{matches}" method="get">
     <input type="number" th:field="*{json.numberMatches}" placeholder="How many results do you want to display?"/>
     <input type="submit" value = "send"/>
