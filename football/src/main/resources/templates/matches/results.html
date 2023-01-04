@@ -3,21 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title222</title>
+    <title>Sportradar</title>
 </head>
 <body>
-<h1>Seba App</h1>
-
+<h1>Most probable matches results</h1>
 <form th:action="@{matches}" method="get">
     <input type="number" th:field="*{json.numberMatches}" placeholder="How many results do you want to display?"/>
     <input type="submit"/>
 </form>
-
 <ol>
-    <li th:each="option : ${json.displayedMatches}">
-        <label th:for="${json.displayedMatches}" th:text="${option}">Language</label>
+    <li th:each="option : ${json.matchesMapTen.entrySet()}" th:value="${option.key}" th:utext="|Start Date: ${option.value.get(0)},<br />
+    ${option.value.get(1)} (${option.value.get(2)}) vs. ${option.value.get(3)} (${option.value.get(4)}),<br />
+    Venue: ${option.value.get(5)},<br />
+    Highest probable result: ${option.value.get(6)} (${option.value.get(7)}),<br /> |" >
     </li>
 </ol>
-
 </body>
 </html>

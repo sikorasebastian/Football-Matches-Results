@@ -12,6 +12,5 @@ public class ResultController {
         JsonReader reader = new JsonReader();
         model.addAttribute("json", reader);
         return "matches/results";
-
     }
 }
